@@ -68,7 +68,7 @@ export default function Portfolio() {
                 <p>Email: ranveer@example.com</p>
                 <div className="mt-4 flex justify-center gap-4">
                     <a href="https://github.com/ranveer" className="text-blue-600">GitHub</a>
-                    <a href="https://linkedin.com/in/ranveer" className="text-blue-600">LinkedIn</a>
+                    <a href="https://linkedin.com/in/rnveer007" className="text-blue-600">LinkedIn</a>
                 </div>
             </section>
         </div>
