@@ -4,8 +4,6 @@ import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGi
 import { SiTailwindcss, SiMongodb, SiExpress, SiFirebase, SiGmail } from 'react-icons/si';
 import { FaHandsClapping } from "react-icons/fa6";
 
-import { FiSend } from 'react-icons/fi';
-
 function Portfolio() {
     const [activeSection, setActiveSection] = useState('about');
 
@@ -13,45 +11,48 @@ function Portfolio() {
     return (
         <div className="bg-[#161616] min-h-screen pt-5 md:pt-10 flex flex-col items-center px-4 sm:px-6 lg:px-8 pb-20">
             {/* Header */}
-            <header className='Header flex flex-col justify-between sm:flex-row h-auto sm:h-[50px] items-center max-w-[1400px] w-full gap-4 sm:gap-0 mb-8 sm:mb-0'>
+            <header className='Header fixed top-0 z-[99] bg-[#1B1B1B] py-9 flex flex-col justify-between sm:flex-row h-auto sm:h-[50px] items-center px-36 w-full gap-4 sm:gap-0 mb-8 sm:mb-0'>
                 <div className='flex items-center  gap-3 text-xl sm:text-2xl mr-0 sm:mr-4 w-full sm:w-auto text-center sm:text-left'> <span className='text-yellow-500'> <FaHandsClapping /></span> <h1 className='text-[#F25134] '>Welcome</h1>
                 </div>
 
-                <div className=' border-gray-700 bg-[#1B1B1B] rounded-3xl px-4 sm:px-8 md:px-20 py-3 sm:py-4'>
+                <div className='border-gray-700 bg-[#161616] rounded-3xl px-4 sm:px-8 md:px-20 py-2 sm:py-4'>
                     <ul className='flex justify-between gap-2 sm:gap-4 text-sm sm:text-base'>
-                        <li
-                            className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'about' ? 'text-[#F25134]' : 'text-white'}`}
-                            onClick={() => setActiveSection('about')}
-                        >
-                            ABOUT
+                        <li className=''>
+                            <a href="#about"
+                                className={`cursor-pointer hover:opacity-80 duration-300 transition ${activeSection === 'about' ? 'text-[#F25134]' : 'text-white'}`}
+                            >
+                                ABOUT
+                            </a>
                         </li>
-                        <li
-                            className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'portfolio' ? 'text-[#F25134]' : 'text-white'}`}
-                            onClick={() => setActiveSection('portfolio')}
-                        >
-                            PORTFOLIO
+                        <li className=''>
+                            <a
+                                href="#portfolio"
+                                className={`cursor-pointer hover:opacity-80 transition-all duration-300 ease-in-out ${activeSection === 'portfolio' ? 'text-[#F25134]' : 'text-white'
+                                    }`}
+                            >
+                                PORTFOLIO
+                            </a>
                         </li>
-                        <li
-                            className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'contact' ? 'text-[#F25134]' : 'text-white'}`}
-                            onClick={() => setActiveSection('contact')}
-                        >
-                            CONTACT
+                        <li className=''>
+                            <a href="#contact"
+                                className={`cursor-pointer hover:opacity-80  duration-300 transition ${activeSection === 'contact' ? 'text-[#F25134]' : 'text-white'}`}
+                            >CONTACT
+                            </a>
                         </li>
                     </ul>
                 </div>
             </header>
 
             {/* Hero Section */}
-            <div className="Hero w-full max-w-[1400px] min-h-[350px] border border-gray-700 mt-6 sm:mt-10 flex flex-col lg:flex-row justify-between items-center gap-8 p-6 sm:p-8 md:p-10 rounded-lg mb-16">
+            <div className="Hero w-full max-w-[1400px] min-h-[350px] border border-gray-700 sm:mt-10 flex flex-col lg:flex-row justify-between items-center gap-8 p-6 sm:p-8 md:p-10 rounded-lg mb-16" style={{ marginTop: '7rem' }}>
                 <div className="Info text-center lg:text-left order-2 lg:order-1">
-                    <h1 className='text-[#C0C0C0] text-sm sm:text-base mb-6 sm:mb-8 md:mb-12'>FULL STACK DEVELOPER</h1>
-                    <h1 className='text-white font-bold text-2xl sm:text-3xl md:text-4xl mb-3'>I'm <span className='text-[#F25134]'>Ranveer</span></h1>
+                    <h1 className='text-white font-bold text-2xl sm:text-3xl md:text-4xl mb-3'>Hey! I'm <span className='text-[#F25134]'>Ranveer</span></h1>
+                    <h1 className='text-[#C0C0C0] text-sm sm:text-base mb-6 sm:mb-8 md:mb-12'>I AM A FULL STACK DEVELOPER</h1>
                     <p className='text-[#C0C0C0] text-sm sm:text-base md:text-lg mb-4'>
                         {activeSection === 'about' && 'Passionate about creating web applications with modern technologies'}
                         {activeSection === 'portfolio' && 'Check out my learning projects and experiments'}
                         {activeSection === 'contact' && 'Get in touch to discuss opportunities'}
                     </p>
-
                 </div>
 
                 <div className="Profile text-center order-1 lg:order-2">
@@ -66,71 +67,42 @@ function Portfolio() {
                 </div>
             </div>
 
-            <div className='w-full max-w-[1400px] flex flex-col lg:flex-row justify-between gap-8'>
-                {/* Main Content Sections */}
-                <div className="w-full lg:max-w-[1400px]">
-                    {/* About Section */}
-                    {activeSection === 'about' && (
-                        <div className="About-section text-white p-6 sm:p-8 border-gray-700 rounded-lg">
-                            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-[#F25134]">About Me</h2>
-                            <div className="grid md:grid-cols-2 gap-8">
-                                <div>
-                                    <h3 className="text-xl font-semibold mb-4">Background</h3>
-                                    <div className="space-y-6">
-                                        <div className="border-l-2 border-[#F25134] pl-4">
-                                            <p className="text-[#C0C0C0] text-sm">12th Pass • 2017</p>
-                                            <p className="mt-2 text-[#C0C0C0]">Completed my higher secondary education with focus on computer science fundamentals</p>
-                                        </div>
-                                        <div className="border-l-2 border-[#F25134] pl-4">
-                                            <h4 className="font-medium">Self-Taught Developer</h4>
-                                            <p className="text-[#C0C0C0] text-sm">2024 - Present</p>
-                                            <p className="mt-2 text-[#C0C0C0]">"Dedicated to learning full-stack development through online resources and personal projects."</p>
-                                        </div>
-                                    </div>
-
-                                    <h3 className="text-xl font-semibold mt-8 mb-4">Education</h3>
-                                    <div className="border-l-2 border-[#F25134] pl-4">
-                                        <h4 className="font-medium">Higher Secondary Education</h4>
-                                        <p className="text-[#C0C0C0] text-sm">RBSE Board • 2021 - 2023</p>
-                                        <p className="mt-2 text-[#C0C0C0]">Specialized in Computer Science and Mathematics</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )}
+            {/* About Section */}
+            <div id='about' className="About-section h-[400px] text-white p-6 sm:p-8 border-gray-700 m-auto flex items-center">
+                <div>
+                    <h2 className="text-2xl text-center sm:text-3xl mb-12 font-bold text-[#F25134]">About Me</h2>
+                    <div className="text-center w-[900px] m-auto">
+                        <p className=''>I'm a passionate developer with a strong focus on creating visually engaging and highly functional web experiences. With a blend of creativity and technical skill, I enjoy building responsive, user-friendly interfaces and solving complex problems through clean, efficient code. Whether it's developing from scratch or refining existing projects, I aim to deliver digital solutions that not only work great — but feel great to use.</p>
+                    </div>
                 </div>
             </div>
 
-
             {/* Portfolio Section */}
-            {activeSection === 'portfolio' && (
-                <div className="Portfolio-section text-white p-6 sm:p-8 border border-gray-700 rounded-lg">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-[#F25134]">My Projects</h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <ProjectCard
-                            title="Personal Portfolio"
-                            description="The website you're viewing right now, built with React and Tailwind CSS"
-                            technologies={['React', 'Tailwind CSS', 'Responsive Design']}
-                        />
-                        <ProjectCard
-                            title="E-commerce Demo"
-                            description="A mock e-commerce site with product listings and cart functionality"
-                            technologies={['React', 'Node.js', 'MongoDB']}
-                        />
-                        <ProjectCard
-                            title="Task Manager"
-                            description="A simple task management application with CRUD operations"
-                            technologies={['JavaScript', 'Firebase', 'CSS3']}
-                        />
-                        <ProjectCard
-                            title="Weather App"
-                            description="Displays current weather using a public API"
-                            technologies={['HTML5', 'CSS3', 'JavaScript']}
-                        />
-                    </div>
+            <div id='portfolio' className="Portfolio-section w-[1400px] mt-15 text-white p-6 sm:p-8 border border-gray-700 rounded-lg">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-[#F25134]">My Projects</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <ProjectCard
+                        title="Personal Portfolio"
+                        description="The website you're viewing right now, built with React and Tailwind CSS"
+                        technologies={['React', 'Tailwind CSS', 'Responsive Design']}
+                    />
+                    <ProjectCard
+                        title="E-commerce Demo"
+                        description="A mock e-commerce site with product listings and cart functionality"
+                        technologies={['React', 'Node.js', 'MongoDB']}
+                    />
+                    <ProjectCard
+                        title="Task Manager"
+                        description="A simple task management application with CRUD operations"
+                        technologies={['JavaScript', 'Firebase', 'CSS3']}
+                    />
+                    <ProjectCard
+                        title="Weather App"
+                        description="Displays current weather using a public API"
+                        technologies={['HTML5', 'CSS3', 'JavaScript']}
+                    />
                 </div>
-            )}
-
+            </div>
             {/* Sidebar Section */}
             <div className='w-full lg:max-w-[1400px] text-white p-6 sm:p-8 border-gray-700 rounded-lg h-fit mt-10'>
                 <h3 className="text-xl font-semibold mb-6 text-[#F25134] text-center">Skills</h3>
@@ -160,7 +132,7 @@ function Portfolio() {
                 </div> */}
             </div>
 
-            <div className='w-full max-w-[1400px] text-center mt-10 p-6 sm:p-8 border border-gray-700 rounded-lg'>
+            <div id='contact' className='w-full max-w-[1400px] text-center mt-10 p-6 sm:p-8 border border-gray-700 rounded-lg'>
                 <h3 className="text-xl font-semibold mb-6 text-[#F25134]">Connect With Me</h3>
                 <div className="space-y-4">
 
@@ -194,7 +166,7 @@ function Portfolio() {
             <footer className="w-full max-w-[1400px] mt-16 text-center text-[#C0C0C0] text-sm border-t border-gray-700 pt-8">
                 <p>© {2025} Ranveer. All rights reserved.</p>
             </footer>
-        </div>
+        </div >
     );
 }
 
