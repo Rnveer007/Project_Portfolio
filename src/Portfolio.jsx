@@ -133,7 +133,7 @@ function Portfolio() {
                         technologies={['React', 'Tailwind CSS', 'Responsive Design']}
                         staticImgSrc={Profile}
                         gifSrc={anime}
-                        projectLink="https://your-portfolio.vercel.app"
+                        projectLink="https://project-portfolio-ke38.vercel.app"
                     />
                     <ProjectCard
                         title="E-commerce Demo"
