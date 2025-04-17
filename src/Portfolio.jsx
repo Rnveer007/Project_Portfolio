@@ -6,9 +6,13 @@ import anime from './assets/vanitas-anime.gif'
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiExpress, SiFirebase, SiGmail } from 'react-icons/si';
 import { FaHandsClapping } from "react-icons/fa6";
+import { FaBars, FaTimes } from "react-icons/fa";
+
 
 function Portfolio() {
     const [activeSection, setActiveSection] = useState('about');
+    const [menuOpen, setMenuOpen] = useState(false); // <-- inside Portfolio()
+
 
 
     return (
@@ -40,13 +44,22 @@ function Portfolio() {
                     >
                         Welcome
                     </motion.h1>
+
+                    <div className="sm:hidden w-full flex justify-end">
+                        <button onClick={() => setMenuOpen(!menuOpen)} className="text-white text-2xl">
+                            {menuOpen ? <FaTimes /> : <FaBars />}
+                        </button>
+                    </div>
                 </motion.div>
-                <div className='border-gray-700 bg-[#161616] rounded-3xl px-3 sm:px-6 md:px-10 lg:px-20 py-2 sm:py-3 md:py-4 w-full sm:w-auto'>
-                    <ul className='flex justify-between sm:justify-center gap-2 sm:gap-4 text-xs sm:text-sm md:text-base'>
+
+                <div className={`border-gray-700 bg-[#161616] rounded-2xl px-6 py-4 sm:px-6 sm:py-3 md:px-10 lg:px-20  w-[250px] sm:w-auto transition-all duration-300 ease-in-out  ${menuOpen ? 'block' : 'hidden'} sm:block absolute right-10`}>
+
+                    <ul className='flex flex-col sm:flex-row justify-between sm:justify-center gap-4 sm:gap-6 text-sm sm:text-base text-center'>
                         <li>
                             <a
                                 href="#about"
-                                className={`cursor-pointer hover:opacity-80 duration-300 transition ${activeSection === 'about' ? 'text-[#F25134]' : 'text-white'}`}
+                                className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'about' ? 'text-[#F25134]' : 'text-white'}`}
+                                onClick={() => setMenuOpen(false)}
                             >
                                 ABOUT
                             </a>
@@ -54,7 +67,8 @@ function Portfolio() {
                         <li>
                             <a
                                 href="#portfolio"
-                                className={`cursor-pointer hover:opacity-80 transition-all duration-300 ease-in-out ${activeSection === 'portfolio' ? 'text-[#F25134]' : 'text-white'}`}
+                                className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'portfolio' ? 'text-[#F25134]' : 'text-white'}`}
+                                onClick={() => setMenuOpen(false)}
                             >
                                 PROJECTS
                             </a>
@@ -62,7 +76,8 @@ function Portfolio() {
                         <li>
                             <a
                                 href="#contact"
-                                className={`cursor-pointer hover:opacity-80 duration-300 transition ${activeSection === 'contact' ? 'text-[#F25134]' : 'text-white'}`}
+                                className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'contact' ? 'text-[#F25134]' : 'text-white'}`}
+                                onClick={() => setMenuOpen(false)}
                             >
                                 CONTACT
                             </a>
