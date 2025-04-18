@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
 
-import Profile from "../dist/assets/Profile-BlvD1FFu.webp";
-import porfolio from './assets/portfolio.gif'
+// import Profile from "../dist/assets/Profile-BlvD1FFu.webp";
+import portfolio from './assets/portfolio.gif'
 import gridProject from './assets/gridSystem.gif'
 import pokemon from './assets/pokemon.gif'
 import game from './assets/game.gif'
@@ -150,7 +150,7 @@ function Portfolio() {
                         description="The website you're viewing right now, built with React and Tailwind CSS"
                         technologies={['React', 'Tailwind CSS', 'Responsive Design']}
                         Preview="Preview"
-                        gifSrc={porfolio}
+                        gifSrc={portfolio}
                         projectLink="https://project-portfolio-ke38.vercel.app"
                     />
                     <ProjectCard
