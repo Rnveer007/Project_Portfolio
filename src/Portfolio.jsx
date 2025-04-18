@@ -14,7 +14,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 function Portfolio() {
     const [activeSection, setActiveSection] = useState('about');
-    const [menuOpen, setMenuOpen] = useState(false); 
+    const [menuOpen, setMenuOpen] = useState(false);
 
 
 
@@ -45,9 +45,15 @@ function Portfolio() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: 0.5 }}
                     >
-                        Welcome
+                        <a
+                            href="https://project-portfolio-ke38.vercel.app"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                        >
+                            Welcome
+                        </a>
                     </motion.h1>
-
                     <div className="sm:hidden w-full flex justify-end">
                         <button onClick={() => setMenuOpen(!menuOpen)} className="text-white text-2xl">
                             {menuOpen ? <FaTimes /> : <FaBars />}
@@ -118,6 +124,26 @@ function Portfolio() {
                 </div>
             </div>
 
+
+            {/* Skills Section */}
+            <div className='Skills w-full max-w-[1400px] min-h-[500px] text-white p-4 sm:p-6 md:p-8 border border-gray-700 rounded-lg mt-10 flex justify-center items-center mx-auto'>
+                <div className="w-full">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-6 text-[#F25134] text-center">Skills</h3>
+                    <div className="flex flex-wrap justify-center gap-6 p-4 sm:p-6 md:p-8 bg-[#1B1B1B] rounded-xl">
+                        <SkillIcon icon={<FaReact className="w-full h-full" />} name="React" />
+                        <SkillIcon icon={<FaNodeJs className="w-full h-full" />} name="Node.js" />
+                        <SkillIcon icon={<SiExpress className="w-full h-full" />} name="Express" />
+                        <SkillIcon icon={<SiMongodb className="w-full h-full" />} name="MongoDB" />
+                        <SkillIcon icon={<FaHtml5 className="w-full h-full" />} name="HTML5" />
+                        <SkillIcon icon={<FaCss3Alt className="w-full h-full" />} name="CSS3" />
+                        <SkillIcon icon={<FaJs className="w-full h-full" />} name="JavaScript" />
+                        <SkillIcon icon={<SiTailwindcss className="w-full h-full" />} name="Tailwind" />
+                        <SkillIcon icon={<SiFirebase className="w-full h-full" />} name="Firebase" />
+                        <SkillIcon icon={<FaGitAlt className="w-full h-full" />} name="Git" />
+                    </div>
+                </div>
+            </div>
+
             {/* About Section */}
             <div id='about' className="About-section w-full max-w-[1400px] text-white p-4 sm:p-6 md:p-8 border-gray-700 mx-auto flex items-center min-h-[600px] sm:min-h-[650px]">
                 <div className="w-full">
@@ -180,25 +206,6 @@ function Portfolio() {
                 </div>
             </div>
 
-            {/* Skills Section */}
-            <div className='Skills w-full max-w-[1400px] min-h-[500px] text-white p-4 sm:p-6 md:p-8 border border-gray-700 rounded-lg mt-10 flex justify-center items-center mx-auto'>
-                <div className="w-full">
-                    <h3 className="text-lg sm:text-xl font-semibold mb-6 text-[#F25134] text-center">Skills</h3>
-                    <div className="flex flex-wrap justify-center gap-6 p-4 sm:p-6 md:p-8 bg-[#1B1B1B] rounded-xl">
-                        <SkillIcon icon={<FaReact className="w-full h-full" />} name="React" />
-                        <SkillIcon icon={<FaNodeJs className="w-full h-full" />} name="Node.js" />
-                        <SkillIcon icon={<SiExpress className="w-full h-full" />} name="Express" />
-                        <SkillIcon icon={<SiMongodb className="w-full h-full" />} name="MongoDB" />
-                        <SkillIcon icon={<FaHtml5 className="w-full h-full" />} name="HTML5" />
-                        <SkillIcon icon={<FaCss3Alt className="w-full h-full" />} name="CSS3" />
-                        <SkillIcon icon={<FaJs className="w-full h-full" />} name="JavaScript" />
-                        <SkillIcon icon={<SiTailwindcss className="w-full h-full" />} name="Tailwind" />
-                        <SkillIcon icon={<SiFirebase className="w-full h-full" />} name="Firebase" />
-                        <SkillIcon icon={<FaGitAlt className="w-full h-full" />} name="Git" />
-                    </div>
-                </div>
-            </div>
-
             {/* Learning Journey */}
             <div className='flex justify-center w-full max-w-[1400px] min-h-[300px] my-10 items-center mx-auto p-4 sm:p-6'>
                 <div>
@@ -226,7 +233,7 @@ function Portfolio() {
                 <div className="space-y-4">
                     <div className="bg-[#1B1B1B] p-2 rounded-full flex items-center justify-center gap-3 text-[#C0C0C0] hover:text-[#F25134] transition text-sm sm:text-base">
                         <SiGmail className="w-5 h-5 text-[#F25134]" />
-                        <span>rvs523474@example.com</span>
+                        <span>rvs523474@gmail.com</span>
                     </div>
 
                     <div className="Contact-section bg-[#1B1B1B] p-2 rounded-full flex items-center justify-center gap-3 text-[#C0C0C0] hover:text-[#F25134] transition text-sm sm:text-base">
@@ -258,23 +265,23 @@ function Portfolio() {
 // Skill Icon Component
 function SkillIcon({ icon, name }) {
     return (
-      <motion.div
-        className="flex flex-col items-center group"
-        initial={{ opacity: 0, scale: 0.5 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.3 }}
-        viewport={{ once: true }}
-      >
         <motion.div
-          whileHover={{ scale: 1.2, rotate: 5 }}
-          className="bg-[#1B1B1B] p-3 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-2 group-hover:bg-[#F25134] transition"
+            className="flex flex-col items-center group"
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
         >
-          {icon}
+            <motion.div
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                className="bg-[#1B1B1B] p-3 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-2 group-hover:bg-[#F25134] transition"
+            >
+                {icon}
+            </motion.div>
+            <span className="text-xs sm:text-sm text-center">{name}</span>
         </motion.div>
-        <span className="text-xs sm:text-sm text-center">{name}</span>
-      </motion.div>
     );
-  }
+}
 
 // Project Card Component
 function ProjectCard({ title, description, technologies, Preview, gifSrc, projectLink }) {
@@ -287,7 +294,7 @@ function ProjectCard({ title, description, technologies, Preview, gifSrc, projec
         >
             <div className="bg-[#1B1B1B] h-48 relative overflow-hidden">
 
-                <h3 className="font-bold text-lg mb-2 text-center mt-20 group-hover:text-[#F25134] transition">{Preview}</h3>
+                <h3 className="font-bold text-lg mb-2 text-center mt-20 group-hover:text-[#F25134] transition underline">{Preview}</h3>
                 {/* GIF on hover */}
                 <img
                     src={gifSrc}
