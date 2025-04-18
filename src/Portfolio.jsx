@@ -109,11 +109,11 @@ function Portfolio() {
                     </p>
 
                     <div className="relative">
-                        <img
+                        {/* <img
                             src={Profile}
                             alt="Ranveer's profile"
                             className='border border-amber-50 rounded-full h-[100px] w-[100px] sm:h-[130px] sm:w-[130px] md:h-[160px] md:w-[160px] lg:h-[200px] lg:w-[200px] object-cover mx-auto'
-                        />
+                        /> */}
                     </div>
                 </div>
             </div>
