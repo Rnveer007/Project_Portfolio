@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 
 import Profile from "../dist/assets/Profile-BlvD1FFu.webp";
-import anime from './assets/vanitas-anime.gif'
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import porfolio from './assets/portfolio.gif'
+import gridProject from './assets/gridSystem.gif'
+import pokemon from './assets/pokemon.gif'
+import game from './assets/game.gif'
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiExpress, SiFirebase, SiGmail } from 'react-icons/si';
 import { FaHandsClapping } from "react-icons/fa6";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -146,29 +149,32 @@ function Portfolio() {
                         title="Personal Portfolio"
                         description="The website you're viewing right now, built with React and Tailwind CSS"
                         technologies={['React', 'Tailwind CSS', 'Responsive Design']}
-                        staticImgSrc={Profile}
-                        gifSrc={anime}
+                        Preview="Preview"
+                        gifSrc={porfolio}
                         projectLink="https://project-portfolio-ke38.vercel.app"
                     />
                     <ProjectCard
-                        title="E-commerce Demo"
-                        description="A mock e-commerce site with product listings and cart functionality"
-                        technologies={['React', 'Node.js', 'MongoDB']}
-                        gifSrc="/assets/vanitas-anime.gifx"
-                        projectLink="https://your-ecommerce-demo.vercel.app"
+                        title="Avatar Game"
+                        description="A game site with your favorite avatar"
+                        technologies={['React', 'Node.js', 'Tailwind']}
+                        Preview="Preview"
+                        gifSrc={game}
+                        projectLink="project-react-avatar-game-xqd8.vercel.app"
                     />
                     <ProjectCard
                         title="Poke-World"
                         description="Poke-World, a fully interactive Pokémon discovery app! Dynamic, responsive design with real-time API integration"
                         technologies={['JavaScript', 'React', 'CSS3']}
-                        gifSrc="/gifs/portfolio.gif"
-                        projectLink="https://react-project-pokemon.vercel.app"
+                        Preview="Preview"
+                        gifSrc={pokemon}
+                        projectLink="https://react-project-pokemon-32sb.vercel.app"
                     />
                     <ProjectCard
                         title="Interactive Grid system"
                         description="Dynamic grid generation Interactive UI with event handling Clean and responsive design"
                         technologies={['HTML5', 'CSS3', 'JavaScript']}
-                        gifSrc="/gifs/portfolio.gif"
+                        Preview="Preview"
+                        gifSrc={gridProject}
                         projectLink="https://project-dynamic-grid-interaction.vercel.app"
                     />
                 </div>
@@ -237,9 +243,6 @@ function Portfolio() {
                         <a href="https://github.com/Rnveer007" className="bg-[#1B1B1B] p-3 rounded-full hover:bg-[#F25134] transition">
                             <FaGithub className="w-5 h-5 text-[#C0C0C0] hover:text-white" />
                         </a>
-                        <a href="#" className="bg-[#1B1B1B] p-3 rounded-full hover:bg-[#F25134] transition">
-                            <FaTwitter className="w-5 h-5 text-[#C0C0C0] hover:text-white" />
-                        </a>
                     </div>
                 </div>
             </div>
@@ -255,18 +258,26 @@ function Portfolio() {
 // Skill Icon Component
 function SkillIcon({ icon, name }) {
     return (
-        <div className="flex flex-col items-center group">
-            <div className="bg-[#1B1B1B] p-3 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-2 group-hover:bg-[#F25134] transition">
-                {icon}
-            </div>
-            <span className="text-xs sm:text-sm text-center">{name}</span>
-        </div>
+      <motion.div
+        className="flex flex-col items-center group"
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          whileHover={{ scale: 1.2, rotate: 5 }}
+          className="bg-[#1B1B1B] p-3 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-2 group-hover:bg-[#F25134] transition"
+        >
+          {icon}
+        </motion.div>
+        <span className="text-xs sm:text-sm text-center">{name}</span>
+      </motion.div>
     );
-}
-
+  }
 
 // Project Card Component
-function ProjectCard({ title, description, technologies, staticImgSrc, gifSrc, projectLink }) {
+function ProjectCard({ title, description, technologies, Preview, gifSrc, projectLink }) {
     return (
         <a
             href={projectLink}
@@ -275,12 +286,8 @@ function ProjectCard({ title, description, technologies, staticImgSrc, gifSrc, p
             className="border w-[300px] border-gray-700 rounded-lg overflow-hidden hover:border-[#F25134] transition group cursor-pointer block"
         >
             <div className="bg-[#1B1B1B] h-48 relative overflow-hidden">
-                {/* Static image */}
-                <img
-                    src={staticImgSrc}
-                    alt={`${title} thumbnail`}
-                    className="object-cover w-full h-full transition-opacity duration-300"
-                />
+
+                <h3 className="font-bold text-lg mb-2 text-center mt-20 group-hover:text-[#F25134] transition">{Preview}</h3>
                 {/* GIF on hover */}
                 <img
                     src={gifSrc}
