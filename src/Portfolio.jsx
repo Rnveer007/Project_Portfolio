@@ -40,14 +40,14 @@ function Portfolio() {
                         <FaHandsClapping />
                     </motion.span>
                     <motion.h1
-                        className="text-[#F25134] cursor-pointer hover:underline"
+                        className="text-[#F25134]"
                         initial={{ opacity: 0, x: 10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: 0.5 }}
-                        onClick={() => window.open("https://your-project-link.com", "_blank")}
                     >
                         Welcome
                     </motion.h1>
+
                     <div className="sm:hidden w-full flex justify-end">
                         <button onClick={() => setMenuOpen(!menuOpen)} className="text-white text-2xl">
                             {menuOpen ? <FaTimes /> : <FaBars />}
@@ -61,8 +61,12 @@ function Portfolio() {
                         <li>
                             <a
                                 href="#about"
-                                className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'about' ? 'text-[#F25134]' : 'text-white'}`}
-                                onClick={() => setMenuOpen(false)}
+                                onClick={() => {
+                                    setActiveSection("about");
+                                    setMenuOpen(false);
+                                }}
+                                className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'about' ? 'text-[#F25134]' : 'text-white'
+                                    }`}
                             >
                                 ABOUT
                             </a>
@@ -70,8 +74,12 @@ function Portfolio() {
                         <li>
                             <a
                                 href="#portfolio"
-                                className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'portfolio' ? 'text-[#F25134]' : 'text-white'}`}
-                                onClick={() => setMenuOpen(false)}
+                                onClick={() => {
+                                    setActiveSection("portfolio");
+                                    setMenuOpen(false);
+                                }}
+                                className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'portfolio' ? 'text-[#F25134]' : 'text-white'
+                                    }`}
                             >
                                 PROJECTS
                             </a>
@@ -79,13 +87,18 @@ function Portfolio() {
                         <li>
                             <a
                                 href="#contact"
-                                className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'contact' ? 'text-[#F25134]' : 'text-white'}`}
-                                onClick={() => setMenuOpen(false)}
+                                onClick={() => {
+                                    setActiveSection("contact");
+                                    setMenuOpen(false);
+                                }}
+                                className={`cursor-pointer hover:opacity-80 transition ${activeSection === 'contact' ? 'text-[#F25134]' : 'text-white'
+                                    }`}
                             >
                                 CONTACT
                             </a>
                         </li>
                     </ul>
+
                 </div>
             </header>
 
