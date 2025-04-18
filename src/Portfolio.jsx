@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
 
-// import Profile from "../dist/assets/Profile-BlvD1FFu.webp";
+import Profile from "../dist/assets/profile.jpeg";
 import portfolio from '../dist/assets/portfolio.gif'
 import gridProject from '../dist/assets/gridSystem.gif'
 import pokemon from '../dist/assets/pokemon.gif'
@@ -104,16 +104,16 @@ function Portfolio() {
                 </div>
 
                 <div className="Profile text-center order-1 lg:order-2">
-                    <p className="text-[#C0C0C0] text-xs sm:text-sm mb-3 sm:mb-4 md:mb-6 relative before:content-[''] before:absolute before:left-[20px] before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-red-500 text-right pr-4 sm:pr-6 border-1 rounded-2xl border-gray-700">
+                    <p className="text-[#C0C0C0] text-xs mx-10 sm:text-sm mb-3 sm:mb-4 md:mb-6 relative before:content-[''] before:absolute before:left-[20px] before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-red-500  px-8 border-1 rounded-2xl border-gray-700">
                         AVAILABLE FOR JOB
                     </p>
 
                     <div className="relative">
-                        {/* <img
+                        <img
                             src={Profile}
                             alt="Ranveer's profile"
                             className='border border-amber-50 rounded-full h-[100px] w-[100px] sm:h-[130px] sm:w-[130px] md:h-[160px] md:w-[160px] lg:h-[200px] lg:w-[200px] object-cover mx-auto'
-                        /> */}
+                        />
                     </div>
                 </div>
             </div>
