@@ -5,6 +5,8 @@ import portfolio from '../dist/assets/portfolio.gif'
 import gridProject from '../dist/assets/gridSystem.gif'
 import pokemon from '../dist/assets/pokemon.gif'
 import game from '../dist/assets/game.gif'
+import quiz from '../dist/assets/quiz.gif'
+import flipCard from '../dist/assets/flipCard.gif'
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiExpress, SiFirebase, SiGmail } from 'react-icons/si';
 import { FaHandsClapping } from "react-icons/fa6";
@@ -191,7 +193,7 @@ function Portfolio() {
                         technologies={['React', 'Node.js', 'Tailwind']}
                         Preview="Preview"
                         gifSrc={game}
-                        projectLink="project-react-avatar-game-xqd8.vercel.app"
+                        projectLink="https://project-react-avatar-game-xqd8.vercel.app"
                     />
                     <ProjectCard
                         title="Poke-World"
@@ -214,8 +216,16 @@ function Portfolio() {
                         description="Play Quiz with multiple tests"
                         technologies={['HTML5', 'CSS3', 'JavaScript']}
                         Preview="Preview"
-                        gifSrc={gridProject}
+                        gifSrc={quiz}
                         projectLink="https://project-quiz-xi.vercel.app"
+                    />
+                    <ProjectCard
+                        title="Puzzle Game"
+                        description="Puzzle game of flip cards"
+                        technologies={['HTML5', 'CSS3', 'JavaScript']}
+                        Preview="Preview"
+                        gifSrc={flipCard}
+                        projectLink="https://project-flip-card.vercel.app"
                     />
                 </div>
             </div>
