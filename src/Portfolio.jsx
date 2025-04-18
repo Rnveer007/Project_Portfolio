@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 
 // import Profile from "../dist/assets/Profile-BlvD1FFu.webp";
-import portfolio from './assets/portfolio.gif'
-import gridProject from './assets/gridSystem.gif'
-import pokemon from './assets/pokemon.gif'
-import game from './assets/game.gif'
+import portfolio from '../dist/assets/portfolio.gif'
+import gridProject from '../dist/assets/gridSystem.gif'
+import pokemon from '../dist/assets/pokemon.gif'
+import game from '../dist/assets/game.gif'
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiExpress, SiFirebase, SiGmail } from 'react-icons/si';
 import { FaHandsClapping } from "react-icons/fa6";
