@@ -14,7 +14,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 function Portfolio() {
     const [activeSection, setActiveSection] = useState('about');
-    const [menuOpen, setMenuOpen] = useState(false); // <-- inside Portfolio()
+    const [menuOpen, setMenuOpen] = useState(false); 
 
 
 
