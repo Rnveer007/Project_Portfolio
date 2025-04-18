@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
-
 import Profile from "../dist/assets/profile.jpeg";
 import portfolio from '../dist/assets/portfolio.gif'
 import gridProject from '../dist/assets/gridSystem.gif'
@@ -210,11 +209,19 @@ function Portfolio() {
                         gifSrc={gridProject}
                         projectLink="https://project-dynamic-grid-interaction.vercel.app"
                     />
+                    <ProjectCard
+                        title="Quiz App"
+                        description="Play Quiz with multiple tests"
+                        technologies={['HTML5', 'CSS3', 'JavaScript']}
+                        Preview="Preview"
+                        gifSrc={gridProject}
+                        projectLink="https://project-quiz-xi.vercel.app"
+                    />
                 </div>
             </div>
 
             {/* Learning Journey */}
-            <div className='flex justify-center w-full max-w-[1400px] min-h-[300px] my-10 items-center mx-auto p-4 sm:p-6'>
+            <div className='flex w-full max-w-[1400px] min-h-[300px] my-20 items-center mx-auto p-4 sm:p-6'>
                 <div>
                     <h3 className="text-lg sm:text-xl font-semibold mb-4 text-[#F25134]">Learning Journey</h3>
                     <div className="border-l-2 border-[#F25134] pl-4 space-y-3">
@@ -291,7 +298,7 @@ function SkillIcon({ icon, name }) {
 }
 
 // Project Card Component
-function ProjectCard({ title, description, technologies, Preview, gifSrc, projectLink }) {
+function ProjectCard({ title, description, technologies, Preview, gifSrc, projectLink, Logo }) {
     return (
         <a
             href={projectLink}
@@ -299,6 +306,12 @@ function ProjectCard({ title, description, technologies, Preview, gifSrc, projec
             rel="noopener noreferrer"
             className="border w-[300px] border-gray-700 rounded-lg overflow-hidden hover:border-[#F25134] transition group cursor-pointer block"
         >
+            <a
+                href={Logo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border w-[300px] border-gray-700 rounded-lg overflow-hidden hover:border-[#F25134] transition group cursor-pointer block"
+            ></a>
             <div className="bg-[#1B1B1B] h-48 relative overflow-hidden">
 
                 <h3 className="font-bold text-lg mb-2 text-center mt-20 group-hover:text-[#F25134] transition underline">{Preview}</h3>
