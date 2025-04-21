@@ -185,7 +185,7 @@ function Portfolio() {
                         technologies={['React', 'Tailwind CSS', 'Responsive Design']}
                         Preview="Preview"
                         gifSrc={portfolio}
-                        projectLink="https://project-portfolio-ke38.vercel.app"
+                        projectLink="https://project-portfolio-g9cq.vercel.app"
                     />
                     <ProjectCard
                         title="Avatar Game"
