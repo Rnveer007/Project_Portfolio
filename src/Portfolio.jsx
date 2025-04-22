@@ -46,7 +46,7 @@ function Portfolio() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: 0.5 }}
                     >
-                        Welcome
+                        Hey!
                     </motion.h1>
 
                     <div className="sm:hidden w-full flex justify-end">
@@ -107,14 +107,23 @@ function Portfolio() {
             <div className="Hero w-full max-w-[1400px] min-h-[350px] border border-gray-700 mt-[7rem] sm:mt-10 flex flex-col lg:flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 md:p-8 lg:p-10 rounded-lg mb-16">
                 <div className="Info text-center lg:text-left order-2 lg:order-1">
                     <h1 className='text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 sm:mb-3'>
-                        Hey! I'm <span className='text-[#F25134]'>Ranveer</span>
+                        I'm <span className='text-[#F25134]'>Ranveer</span>
                     </h1>
                     <h1 className='text-[#C0C0C0] text-xs sm:text-sm md:text-base mb-4 sm:mb-6 md:mb-8'>I AM A FULL STACK DEVELOPER</h1>
-                    <p className='text-[#C0C0C0] text-xs sm:text-sm md:text-base lg:text-lg mb-3 sm:mb-4'>
+                    <p className='text-[#C0C0C0] text-xs sm:text-sm md:text-base lg:text-lg sm:mb-4 mb-8'>
                         {activeSection === 'about' && 'Passionate about creating web applications with modern technologies'}
                         {activeSection === 'portfolio' && 'Check out my learning projects and experiments'}
                         {activeSection === 'contact' && 'Get in touch to discuss opportunities'}
                     </p>
+
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        className='
+                        text-[#F25134] border-1 py-1 px-3 mt-2 hover:opacity-80 transition'>
+                        View Resume
+                    </a>
+
                 </div>
 
                 <div className="Profile text-center order-1 lg:order-2">
@@ -136,7 +145,7 @@ function Portfolio() {
             {/* Skills Section */}
             <div className='Skills w-full max-w-[1400px] min-h-[500px] text-white p-4 sm:p-6 md:p-8 border border-gray-700 rounded-lg mt-10 flex justify-center items-center mx-auto'>
                 <div className="w-full">
-                    <h3 className="text-lg sm:text-xl font-semibold mb-6 text-[#F25134] text-center">Skills</h3>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl text-center font-bold mb-6 text-[#F25134] text-center">Skills</h3>
                     <div className="flex flex-wrap justify-center gap-6 p-4 sm:p-6 md:p-8 bg-[#1B1B1B] rounded-xl">
                         <SkillIcon icon={<FaReact className="w-full h-full" />} name="React" />
                         <SkillIcon icon={<FaNodeJs className="w-full h-full" />} name="Node.js" />
@@ -153,7 +162,7 @@ function Portfolio() {
             </div>
 
             {/* About Section */}
-            <div id='about' className="About-section w-full max-w-[1400px] text-white p-4 sm:p-6 md:p-8 border-gray-700 mx-auto flex items-center min-h-[600px] sm:min-h-[650px]">
+            <div id='about' className="About-section w-full max-w-[1400px] text-white p-4 sm:p-6 md:p-8 border-gray-700 mx-auto flex items-center min-h-[600px] sm:min-h-[650px] border-b-1 mb-10">
                 <div className="w-full">
                     <h2 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 sm:mb-10 md:mb-12 font-bold text-[#F25134]">About Me</h2>
                     <div className="text-center text-base sm:text-lg md:text-xl w-full max-w-[900px] mx-auto">
@@ -172,68 +181,130 @@ function Portfolio() {
                 </div>
             </div>
 
-            <hr className='border border-gray-700 w-full max-w-[1400px] mx-auto' />
-
 
             {/* Portfolio Section */}
-            <div id='portfolio' className="Portfolio-section w-full max-w-[1400px] mt-10 text-white p-4 sm:p-6 md:p-8 border border-gray-700 rounded-lg overflow-hidden mx-auto">
-                <h2 className="text-xl sm:text-2xl md:text-3xl text-center font-bold mb-12 sm:mb-16 text-[#F25134]">My Projects</h2>
+            <motion.div
+                id='portfolio'
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="Portfolio-section w-full max-w-[1400px] mt-10 text-white p-4 sm:p-6 md:p-8 border border-gray-700 rounded-lg overflow-hidden mx-auto"
+            >
+                <motion.h2
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className="text-xl sm:text-2xl mb-6 md:text-3xl text-center font-bold sm:mb-16 text-[#F25134]"
+                >
+                    My Projects
+                </motion.h2>
+
                 <div className="flex flex-wrap gap-6 justify-center">
-                    <ProjectCard
-                        title="Personal Portfolio"
-                        description="The website you're viewing right now, built with React and Tailwind CSS"
-                        technologies={['React', 'Tailwind CSS', 'Responsive Design']}
-                        Preview="Preview"
-                        gifSrc={portfolio}
-                        projectLink="https://project-portfolio-g9cq.vercel.app"
-                    />
-                    <ProjectCard
-                        title="Avatar Game"
-                        description="A game site with your favorite avatar"
-                        technologies={['React', 'Node.js', 'Tailwind']}
-                        Preview="Preview"
-                        gifSrc={game}
-                        projectLink="https://project-react-avatar-game-xqd8.vercel.app"
-                    />
-                    <ProjectCard
-                        title="Poke-World"
-                        description="Poke-World, a fully interactive Pokémon discovery app! Dynamic, responsive design with real-time API integration"
-                        technologies={['JavaScript', 'React', 'CSS3']}
-                        Preview="Preview"
-                        gifSrc={pokemon}
-                        projectLink="https://react-project-pokemon-32sb.vercel.app"
-                    />
-                    <ProjectCard
-                        title="Interactive Grid system"
-                        description="Dynamic grid generation Interactive UI with event handling Clean and responsive design"
-                        technologies={['HTML5', 'CSS3', 'JavaScript']}
-                        Preview="Preview"
-                        gifSrc={gridProject}
-                        projectLink="https://project-dynamic-grid-interaction.vercel.app"
-                    />
-                    <ProjectCard
-                        title="Quiz App"
-                        description="Play Quiz with multiple tests"
-                        technologies={['HTML5', 'CSS3', 'JavaScript']}
-                        Preview="Preview"
-                        gifSrc={quiz}
-                        projectLink="https://project-quiz-xi.vercel.app"
-                    />
-                    <ProjectCard
-                        title="Puzzle Game"
-                        description="Puzzle game of flip cards"
-                        technologies={['HTML5', 'CSS3', 'JavaScript']}
-                        Preview="Preview"
-                        gifSrc={flipCard}
-                        projectLink="https://project-flip-card.vercel.app"
-                    />
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.1, duration: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <ProjectCard
+                            title="Personal Portfolio"
+                            description="The website you're viewing right now, built with React and Tailwind CSS"
+                            technologies={['React', 'Tailwind CSS']}
+                            Preview="Preview"
+                            gifSrc={portfolio}
+                            projectLink="https://project-portfolio-g9cq.vercel.app"
+                        />
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2, duration: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <ProjectCard
+                            title="Avatar Game"
+                            description="A game site with your favorite avatar"
+                            technologies={['React', 'Tailwind CSS', 'Responsive Design']}
+                            Preview="Preview"
+                            gifSrc={game}
+                            projectLink="https://project-react-avatar-game-xqd8.vercel.app"
+                        />
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.3, duration: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <ProjectCard
+                            title="Poke-World"
+                            description="Poke-World, a fully interactive Pokémon discovery app! Dynamic, responsive design with real-time API integration"
+                            technologies={['JavaScript', 'React', 'CSS3']}
+                            Preview="Preview"
+                            gifSrc={pokemon}
+                            projectLink="https://react-project-pokemon-32sb.vercel.app"
+                        />
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.4, duration: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <ProjectCard
+                            title="Interactive Grid system"
+                            description="Dynamic grid generation Interactive UI with event handling Clean and responsive design"
+                            technologies={['HTML5', 'CSS3', 'JavaScript']}
+                            Preview="Preview"
+                            gifSrc={gridProject}
+                            projectLink="https://project-dynamic-grid-interaction.vercel.app"
+                        />
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.5, duration: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <ProjectCard
+                            title="Quiz App"
+                            description="Play Quiz with multiple tests"
+                            technologies={['HTML5', 'CSS3', 'JavaScript']}
+                            Preview="Preview"
+                            gifSrc={quiz}
+                            projectLink="https://project-quiz-xi.vercel.app"
+                        />
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.6, duration: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <ProjectCard
+                            title="Puzzle Game"
+                            description="Puzzle game of flip cards"
+                            technologies={['HTML5', 'CSS3', 'JavaScript']}
+                            Preview="Preview"
+                            gifSrc={flipCard}
+                            projectLink="https://project-flip-card.vercel.app"
+                        />
+                    </motion.div>
                 </div>
-            </div>
+            </motion.div>
+
 
             {/* Learning Journey */}
-            <div className='flex w-full max-w-[1400px] min-h-[300px] my-20 items-center mx-auto p-4 sm:p-6'>
+            <div className=' w-full max-w-[1400px] min-h-[300px] my-20 items-center mx-auto p-4 sm:p-6'>
                 <div>
-                    <h3 className="text-lg sm:text-xl font-semibold mb-4 text-[#F25134]">Learning Journey</h3>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl text-center font-bold mb-4 text-[#F25134] w-full text-center mb-10">Experience</h3>
                     <div className="border-l-2 border-[#F25134] pl-4 space-y-3">
                         <p className="text-[#C0C0C0] flex items-start gap-2 text-sm sm:text-base">
                             <span className="text-[#F25134]">•</span> Full Stack Developer Intern @ FSL Learning. <span className='text-white'>2024 May - Present</span>
@@ -253,7 +324,7 @@ function Portfolio() {
 
             {/* Contact Section */}
             <div id='contact' className='w-full max-w-[1400px] text-center mt-10 p-4 sm:p-6 md:p-8 border border-gray-700 rounded-lg mx-auto'>
-                <h3 className="text-lg sm:text-xl font-semibold mb-6 text-[#F25134]">Connect With Me</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl text-center font-bold mb-6 text-[#F25134]">Connect With Me</h3>
                 <div className="space-y-4">
                     <div className="bg-[#1B1B1B] p-2 rounded-full flex items-center justify-center gap-3 text-[#C0C0C0] hover:text-[#F25134] transition text-sm sm:text-base">
                         <SiGmail className="w-5 h-5 text-[#F25134]" />
@@ -308,7 +379,7 @@ function SkillIcon({ icon, name }) {
 }
 
 // Project Card Component
-function ProjectCard({ title, description, technologies, Preview, gifSrc, projectLink, Logo }) {
+function ProjectCard({ title, description, technologies, Preview, gifSrc, projectLink }) {
     return (
         <a
             href={projectLink}
@@ -316,12 +387,6 @@ function ProjectCard({ title, description, technologies, Preview, gifSrc, projec
             rel="noopener noreferrer"
             className="border w-[300px] border-gray-700 rounded-lg overflow-hidden hover:border-[#F25134] transition group cursor-pointer block"
         >
-            <a
-                href={Logo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border w-[300px] border-gray-700 rounded-lg overflow-hidden hover:border-[#F25134] transition group cursor-pointer block"
-            ></a>
             <div className="bg-[#1B1B1B] h-48 relative overflow-hidden">
 
                 <h3 className="font-bold text-lg mb-2 text-center mt-20 group-hover:text-[#F25134] transition underline">{Preview}</h3>
