@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
-import Profile from "../dist/assets/profile.jpeg";
+import Profile from "../dist/assets/profile.jpg";
 import portfolio from '../dist/assets/portfolio.gif'
 import gridProject from '../dist/assets/gridSystem.gif'
 import pokemon from '../dist/assets/pokemon.gif'
